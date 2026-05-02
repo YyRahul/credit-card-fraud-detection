@@ -14,6 +14,7 @@ The goal is practical: flag suspicious transactions before they cause financial 
 
 ## Dataset
 
+Source: Kaggle
 File: cleaned_creditcfraud.csv
 10,001 transactions × 10 columns
 
