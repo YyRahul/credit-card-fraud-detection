@@ -1,83 +1,66 @@
-# Credit Card Fraud Detection Analysis
+# Credit Card Fraud Detection
 
-## 📊 Project Overview
-
-This project implements a comprehensive credit card fraud detection system using machine learning techniques. The analysis includes data exploration, feature engineering, model training, and performance evaluation to identify fraudulent transactions.
-
-## 🎯 Objective
-
-Detect fraudulent credit card transactions based on transaction patterns and customer behavior to prevent financial losses and enhance security.
-
-## 📁 Dataset
-
-**Source:** `cleaned_creditcfraud.csv`
-- **Rows:** 10,001 transactions
-- **Columns:** 10 features
-- **Target:** Binary classification (fraud/not fraud)
-
-### Features:
-- `transaction_id` - Unique transaction identifier
-- `amount` - Transaction amount ($)
-- `transaction_hour` - Hour of transaction (0-23)
-- `merchant_category` - Type of merchant
-- `foreign_transaction` - International transaction flag (0/1)
-- `location_mismatch` - Billing/shipping location mismatch (0/1)
-- `device_trust_score` - Device security score (0-100)
-- `velocity_last_24h` - Transaction frequency in last 24 hours
-- `cardholder_age` - Age of cardholder
-- `is_fraud` - Target variable (0=legitimate, 1=fraudulent)
-
-## 🛠️ Technologies Used
-
-- **Python** - Programming language
-- **Pandas** - Data manipulation
-- **NumPy** - Numerical operations
-- **Matplotlib** - Data visualization
-- **Seaborn** - Statistical visualization
-- **Scikit-learn** - Machine learning algorithms
-
-## 📈 Analysis Components
-
-1. **Data Exploration** - Understanding dataset structure and characteristics
-2. **Statistical Analysis** - Summary statistics and distribution analysis
-3. **Fraud Distribution** - Class imbalance analysis and visualization
-4. **Correlation Analysis** - Feature relationships and multicollinearity
-5. **Feature Engineering** - Categorical encoding and preprocessing
-6. **Model Training** - Random Forest classifier implementation
-7. **Model Evaluation** - Performance metrics, confusion matrix, ROC-AUC
-8. **Feature Importance** - Understanding model decision factors
-
-## 🚀 Getting Started
-
-### Prerequisites
-```bash
-pip install pandas numpy matplotlib seaborn scikit-learn
-```
-
-### Running the Analysis
-1. Clone this repository
-2. Ensure `cleaned_creditcfraud.csv` is in the same directory
-3. Open `fraud.ipynb` in Jupyter Notebook
-4. Run all cells sequentially
-
-## 📊 Key Findings
-
-- **Fraud Rate:** ~X% of transactions are fraudulent
-- **Top Predictors:** [Based on feature importance analysis]
-- **Model Performance:** [ROC-AUC, Precision, Recall metrics]
-
-## 🤝 Contributing
-
-Feel free to fork this repository and submit pull requests for improvements or additional analysis techniques.
-
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
-## 📞 Contact
-
-For questions or suggestions, please open an issue in this repository.
+A machine learning project for identifying fraudulent credit card transactions using behavioral and transactional patterns.
 
 ---
 
-**Note:** This is an educational project demonstrating fraud detection techniques. For production use, additional security measures and regulatory compliance would be required.
+## Overview
+
+This project builds a fraud detection pipeline from scratch — starting with raw transaction data, moving through exploratory analysis, and ending with a trained Random Forest classifier evaluated on real performance metrics.
+
+The goal is practical: flag suspicious transactions before they cause financial damage.
+
+---
+
+## Dataset
+
+File: cleaned_creditcfraud.csv
+10,001 transactions × 10 columns
+
+Column | Description
+transaction_id | Unique ID per transaction
+amount | Transaction value in USD
+transaction_hour | Hour of day (0–23)
+merchant_category | Merchant type
+foreign_transaction | 1 if international
+location_mismatch | 1 if billing/shipping differ
+device_trust_score | Device security score (0–100)
+velocity_last_24h | Number of transactions in past 24h
+cardholder_age | Age of the cardholder
+is_fraud | Target — 0 = legit, 1 = fraud
+
+---
+
+## What the Notebook Covers
+
+1. Data exploration and sanity checks
+2. Class imbalance analysis
+3. Correlation between features
+4. Encoding categorical variables
+5. Training a Random Forest model
+6. Evaluating with confusion matrix, precision/recall, and ROC-AUC
+7. Feature importance breakdown
+
+---
+
+## Stack
+
+Python, Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn
+
+Install dependencies:
+pip install pandas numpy matplotlib seaborn scikit-learn
+
+---
+
+## Running It
+
+1. Clone the repo
+2. Place cleaned_creditcfraud.csv in the root directory
+3. Open fraud.ipynb in Jupyter
+4. Run all cells top to bottom
+
+---
+
+## Notes
+
+This is an educational project. Production fraud systems require additional layers — real-time scoring, regulatory compliance, model monitoring, and more. This is a starting point, not a finished product.
